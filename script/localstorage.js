@@ -44,20 +44,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // кнопка очищення вибору
-document.getElementById("resetSelections").addEventListener("click", function () {
-    // Видалити всі збережені значення
+document.getElementById('clearButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Очищаємо поля без відправки форми
+    
+    // Очищаємо всі радіо кнопки
     const radios = document.querySelectorAll('input[type="radio"]');
-
-    radios.forEach(function (radio) {
-        localStorage.removeItem(radio.name); // очищаємо localStorage
-        radio.checked = false; // скидаємо вибір
-    });
-
-    // Скинути підсвічування
-    const allCells = document.querySelectorAll(".cell_name, .underline");
-    allCells.forEach(function (cell) {
-        cell.style.backgroundColor = "";
-    });
+    radios.forEach(radio => radio.checked = false);
+    
+    // Очищаємо колір клітинок, якщо потрібно
+    const cells = document.querySelectorAll('.cell_name, .underline');
+    cells.forEach(cell => cell.style.backgroundColor = '');
+    
+    // Скидаємо значення в localStorage (якщо це потрібно)
+    localStorage.clear();
 });
 
     // Якщо жодна радіокнопка з таким value не вибрана, скидаємо колір
