@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.body.addEventListener("click", function (event) {
-    if (event.target && event.target.id === "clearButton") {
+    if (event.target && event.target.id === "resetSelections") {
       event.preventDefault(); // на всякий випадок
       console.log("Очищення всіх радіокнопок");
 
