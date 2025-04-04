@@ -43,23 +43,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// кнопка очищення вибору
-document.getElementById('resetSelections').addEventListener('click', function(event) {
-    event.preventDefault(); // Очищаємо поля без відправки форми
-    
-    // Очищаємо всі радіо кнопки
-    const radios = document.querySelectorAll('input[type="radio"]');
-    radios.forEach(radio => radio.checked = false);
-    
-    // Очищаємо колір клітинок, якщо потрібно
-    const cells = document.querySelectorAll('.cell_name, .underline');
-    cells.forEach(cell => cell.style.backgroundColor = '');
-    
-    // Скидаємо значення в localStorage (якщо це потрібно)
-    localStorage.clear();
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.addEventListener("click", function (event) {
+    if (event.target && event.target.id === "clearButton") {
+      event.preventDefault(); // на всякий випадок
+      console.log("Очищення всіх радіокнопок");
 
-    // Перезавантажити сторінку
-    location.reload();
+      // Очистити всі радіокнопки
+      const radios = document.querySelectorAll('input[type="radio"]');
+      radios.forEach(r => r.checked = false);
+
+      // Очистити localStorage
+      localStorage.clear();
+
+      // Перезавантажити сторінку
+      location.reload();
+    }
+  });
 });
 
     // Якщо жодна радіокнопка з таким value не вибрана, скидаємо колір
