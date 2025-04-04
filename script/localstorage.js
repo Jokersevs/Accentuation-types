@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // кнопка очищення вибору
-document.getElementById('clearButton').addEventListener('click', function(event) {
+document.getElementById('resetSelections').addEventListener('click', function(event) {
     event.preventDefault(); // Очищаємо поля без відправки форми
     
     // Очищаємо всі радіо кнопки
