@@ -57,6 +57,9 @@ document.getElementById('resetSelections').addEventListener('click', function(ev
     
     // Скидаємо значення в localStorage (якщо це потрібно)
     localStorage.clear();
+
+    // Перезавантажити сторінку
+    location.reload();
 });
 
     // Якщо жодна радіокнопка з таким value не вибрана, скидаємо колір
