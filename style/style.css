@@ -292,3 +292,40 @@ a {
 input[type="radio"] {
     accent-color: black;
 }
+
+/* Розрахунок загальної кількості відповідей на кожну з колонок */
+
+.progress-wrapper {
+    width: 100%;
+    background-color: #c8c8c8;
+    border-radius: 4px;
+    height: 20px;
+    margin-top: 4px;
+    position: relative;
+  }
+
+  .progress-bar {
+    height: 100%;
+    border-radius: 2px;
+    background-color: lightgreen;
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    top: 0;
+    line-height: 20px;
+    color: #080808;
+  }
+
+  .green-count-cell {
+    height: 30px;
+  }
+
+  tfoot tr td.first {
+    display: hidden;
+    font-weight: bold;
+  }
